@@ -56,7 +56,18 @@ while True:
     else:
         print("Thank you")
         break
-    
+
+# Exercise 7:
+fav_fruits = input("Please enter your favorite fruits seperated by space: ")
+fav_fruit_list = fav_fruits.split()
+user_input = input("Please enter a fruit")
+for fruit in fav_fruit_list:
+    if fruit == user_input:
+        print("You chose one of your favorite fruits! Enjoy!")
+    else:
+        print("You chose a new fruit. I hope you enjoy it!")
+
+
 
         
 
