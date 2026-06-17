@@ -67,6 +67,28 @@ for fruit in fav_fruit_list:
     else:
         print("You chose a new fruit. I hope you enjoy it!")
 
+# Write a loop that asks the user to enter pizza toppings one by one.
+# Stop the loop when the user types 'quit'.
+# For each topping entered, print:
+# "Adding [topping] to your pizza."
+# After exiting the loop, print all the toppings and the total cost of the pizza.
+# The base price is $10, and each topping adds $2.50.
+
+# Exercise 8:
+toppings = []
+base_price = 10.0
+while True:
+    topping_input = input("Please enter pizza toppings one by one. Type 'quit' to exit: ")
+    if topping_input != "quit":
+        toppings.append(topping_input)
+        print(f"Adding topping to your pizza.")
+    else:
+        break
+toppings_cost = len(toppings) * 2.50
+total_cost = base_price + toppings_cost
+print(f"Total cost is ${total_cost}")
+    
+        
 
 
         
