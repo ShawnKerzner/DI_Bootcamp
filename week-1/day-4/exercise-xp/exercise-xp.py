@@ -60,19 +60,12 @@ while True:
 # Exercise 7:
 fav_fruits = input("Please enter your favorite fruits seperated by space: ")
 fav_fruit_list = fav_fruits.split()
-user_input = input("Please enter a fruit")
+user_input = input("Please enter a fruit: ")
 for fruit in fav_fruit_list:
     if fruit == user_input:
         print("You chose one of your favorite fruits! Enjoy!")
     else:
         print("You chose a new fruit. I hope you enjoy it!")
-
-# Write a loop that asks the user to enter pizza toppings one by one.
-# Stop the loop when the user types 'quit'.
-# For each topping entered, print:
-# "Adding [topping] to your pizza."
-# After exiting the loop, print all the toppings and the total cost of the pizza.
-# The base price is $10, and each topping adds $2.50.
 
 # Exercise 8:
 toppings = []
@@ -87,6 +80,39 @@ while True:
 toppings_cost = len(toppings) * 2.50
 total_cost = base_price + toppings_cost
 print(f"Total cost is ${total_cost}")
+
+#Exercise 9:
+ticket_cost = 0
+while True:
+    age = int(input("Please enter your age. Type 0 to quit: "))
+    if age == 0:
+        break
+    elif age < 3:
+        ticket_cost += 0
+    elif age >= 3 and age <12:
+        ticket_cost += 10
+    elif age > 12:
+        ticket_cost += 15
+print(f"Total cost is ${ticket_cost}")
+
+# Bonus
+movie_goers = {}
+while True:
+    name = input("Please enter your name. Type 'quit' to exit: ")
+    if name == 'quit':
+        break
+    else:
+        age = int(input("Thank you! Now enter your age: "))
+        if age >= 16 and age <= 21:
+            movie_goers[name] = int(age)
+print(movie_goers)
+    
+
+        
+
+
+
+
     
         
 
