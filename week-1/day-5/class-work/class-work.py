@@ -119,7 +119,9 @@
 # my_list = [(i*j) for i in [2,3,4] for j in [100, 200, 300]]
 # print(my_list)
 
-family_age = {'Lea': 12, 'Mark': 25, 'George': 50}
-new_year = 1
-new_family_age = {name: age+new_year for (name, age) in family_age.items()}
-print(new_family_age)
+# family_age = {'Lea': 12, 'Mark': 25, 'George': 50}
+# new_year = 1
+# new_family_age = {name: age+new_year for (name, age) in family_age.items()}
+# print(new_family_age)
+
+
