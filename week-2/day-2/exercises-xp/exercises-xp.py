@@ -62,11 +62,22 @@ print(list(magician_names))
 
 def get_random_temp():
     temp = random.randint(-10, 40)
+    print(f"The temperature right now is {temp} degrees celcius")
     return temp
 
 def main(temp):
     if temp < 0:
         print("Brrr, that's freezing! Wear some extra layers today")
-    if temp == 0 or temp < 16:
+    elif temp >= 0 and temp < 16:
         print("Quite chilly! Don't forget your coat")
+    elif temp >= 16 and temp < 23:
+        print("Nice Weather")
+    elif temp >= 23 and temp <32:
+        print("A bit warm stay hydrated")
+    else:
+        print("It's really hot stay cool")
+
+temp = get_random_temp()
+main(temp)
+
 
