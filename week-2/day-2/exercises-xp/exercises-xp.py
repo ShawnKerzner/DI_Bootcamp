@@ -58,4 +58,15 @@ def make_great(magicians):
 make_great(magician_names)
 print(list(magician_names))
 
-# Exercise 6
+# Exercise 7
+
+def get_random_temp():
+    temp = random.randint(-10, 40)
+    return temp
+
+def main(temp):
+    if temp < 0:
+        print("Brrr, that's freezing! Wear some extra layers today")
+    if temp == 0 or temp < 16:
+        print("Quite chilly! Don't forget your coat")
+
