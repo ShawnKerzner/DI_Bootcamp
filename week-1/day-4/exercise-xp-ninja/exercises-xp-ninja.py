@@ -1,19 +1,20 @@
 import math
 import random
+import sys
 # Exercise 1:
 # Q = Square root of [(2 * C * D)/H]
-# c = int(50)
-# h = int(30)
-# result = []
-# user_input = input("Please enter 3 numbers seperated by commas: ")
-# print(user_input)
-# numbers = [int(num) for num in user_input.split(",")]
-# print(numbers)
-# for d in numbers:
-#     q = int(math.sqrt((2 * c * d) // h))
-#     result.append(q)
-#     continue
-# print(result)
+c = int(50)
+h = int(30)
+result = []
+user_input = input("Please enter 3 numbers seperated by commas: ")
+print(user_input)
+numbers = [int(num) for num in user_input.split(",")]
+print(numbers)
+for d in numbers:
+    q = int(math.sqrt((2 * c * d) // h))
+    result.append(q)
+    continue
+print(result)
 
 # Exercise 2
 # step 1
@@ -93,3 +94,25 @@ while count < 10:
     count += 1
 print(random_integers)
 # step 14
+# random_integers = 0
+# count = 0
+# while  count < 10:
+#     unknown_amount_of_random_ints = (random.randint(50, sys.maxsize) for _ in range(random.randint(1, 10)))
+#     print(unknown_amount_of_random_ints)
+#     random_integers = unknown_amount_of_random_ints + random_integers
+#     count += 1
+# print(random_integers)
+    
+# Step 15 
+# no it doesnt work it just keeps generating nonstop in and endless loop
+#  ex: <generator object <genexpr> at 0x000001C4C77B1EE0>
+# <generator object <genexpr> at 0x000001C4C77B1FC0>
+# <generator object <genexpr> at 0x000001C4C77B1EE0>
+# <generator object <genexpr> at 0x000001C4C77B1FC0>
+# <generator object <genexpr> at 0x000001C4C77B1EE0>
+# <generator object <genexpr> at 0x000001C4C77B1FC0>
+# <generator object <genexpr> at 0x000001C4C77B1EE0>
+# <generator object <genexpr> at 0x000001C4C77B1FC0>
+# <generator object <genexpr> at 0x000001C4C77B1EE0>
+# <generator object <genexpr> at 0x000001C4C77B1FC0>
+ 
