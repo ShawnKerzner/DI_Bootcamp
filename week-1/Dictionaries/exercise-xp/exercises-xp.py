@@ -17,4 +17,18 @@ for key, value in family.items():
         total_cost += 15
         print(f"{key}'s ticket costs $15")
 print(f"The total cost is ${total_cost}")
-    
+#  Exercise 2 Bonus
+family = {}
+total_cost = 0
+number_of_entries = int(input("Number of movie tickets: "))
+family = {input("Name: "): int(input("Age: ")) for _ in range(number_of_entries)}
+for key, value in family.items():
+    if value < 3:
+        print(f"{key}'s ticket is free")
+    elif value > 3 and value < 12:
+        total_cost += 10
+        print(f"{key}'s ticket costs $10")
+    elif value >= 12:
+        total_cost += 15
+        print(f"{key}'s ticket costs $15")
+print(f"The total cost is ${total_cost}")
