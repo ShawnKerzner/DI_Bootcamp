@@ -116,26 +116,53 @@ import sys
 # <generator object <genexpr> at 0x000001C4C77B1EE0>
 # <generator object <genexpr> at 0x000001C4C77B1FC0>
  
+# Exercise 3
+# moon_paragraph = "The Moon is Earth’s only natural satellite and a constant companion in our journey through space. Positioned roughly 384,400 kilometers away, its gravitational pull drives the ocean tides on Earth and helps stabilize our planet's wobble, maintaining a steady climate. It is a world of stark beauty, covered in a fine grey dust called regolith and scarred by millions of craters left behind by asteroid impacts over billions of years. Because the Moon is tidally locked to Earth, it completes one rotation on its axis in the exact same time it takes to orbit our planet, meaning humanity always sees the same familiar face looking down from the night sky."
+# character_count = len(moon_paragraph.replace(" ", ""))
+# print(f"There are {character_count} characters in your paragraph")
+# sentence_count = 0
+# whitespace_count = 0
+# for char in moon_paragraph:
+#     if char == ".":
+#         sentence_count += 1
+#     if char == " ":
+#         whitespace_count += 1
+# print(f"There are {sentence_count} sentences in this paragraph")
+# word_count = len(moon_paragraph.split())
+# print(f"There are {word_count} words in this paragraph")
+# words = moon_paragraph.split()
+# unique_words = set(words)
+# print(f"There are {len(unique_words)} unique words")
+# print(f"There are {whitespace_count} spaces in this paragraph")
+# avg_words_per_sentence = word_count / sentence_count
+# print(f"The average amount of words per sentence is {avg_words_per_sentence}.")
+# unique_words_2 = 0
+# duplicate_words = word_count - len(unique_words)
+# print(f"There are {duplicate_words} duplicate words in this paragraph")
+
 # Exercise 4
-moon_paragraph = "The Moon is Earth’s only natural satellite and a constant companion in our journey through space. Positioned roughly 384,400 kilometers away, its gravitational pull drives the ocean tides on Earth and helps stabilize our planet's wobble, maintaining a steady climate. It is a world of stark beauty, covered in a fine grey dust called regolith and scarred by millions of craters left behind by asteroid impacts over billions of years. Because the Moon is tidally locked to Earth, it completes one rotation on its axis in the exact same time it takes to orbit our planet, meaning humanity always sees the same familiar face looking down from the night sky."
-character_count = len(moon_paragraph.replace(" ", ""))
-print(f"There are {character_count} characters in your paragraph")
-sentence_count = 0
-whitespace_count = 0
-for char in moon_paragraph:
-    if char == ".":
-        sentence_count += 1
-    if char == " ":
-        whitespace_count += 1
-print(f"There are {sentence_count} sentences in this paragraph")
-word_count = len(moon_paragraph.split())
-print(f"There are {word_count} words in this paragraph")
-words = moon_paragraph.split()
-unique_words = set(words)
-print(f"There are {len(unique_words)} unique words")
-print(f"There are {whitespace_count} spaces in this paragraph")
-avg_words_per_sentence = word_count / sentence_count
-print(f"The average amount of words per sentence is {avg_words_per_sentence}.")
-unique_words_2 = 0
-duplicate_words = word_count - len(unique_words)
-print(f"There are {duplicate_words} duplicate words in this paragraph")
+# user_input = input("Please type in a sentence") to use later at the end
+numbers = []
+uppercase = []
+lowercase = []
+example_input = "New to Python or choosing between Python 2 and Python 3? Read Python 2 or Python 3."
+split_example_input = example_input.split()
+for word in split_example_input:
+    clean_word = word.strip("?.!,")
+    if clean_word.isdigit():
+        numbers.append(word)
+    elif clean_word and clean_word[0].isupper():
+        uppercase.append(word)
+    else:
+        lowercase.append(word)
+numbers.sort()
+uppercase.sort()
+lowercase.sort()
+ordered_list = numbers + uppercase + lowercase
+for word in ordered_list:
+    print(f"{word}:{split_example_input.count(word)}")
+    
+         
+    
+
+
