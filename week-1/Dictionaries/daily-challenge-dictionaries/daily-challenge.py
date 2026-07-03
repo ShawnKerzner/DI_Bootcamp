@@ -39,3 +39,5 @@ if basket == []:
     print("Nothing")
 else:
     print(f"The following items are in your basket {sorted(basket)} and you have ${new_wallet} left over")
+
+    
