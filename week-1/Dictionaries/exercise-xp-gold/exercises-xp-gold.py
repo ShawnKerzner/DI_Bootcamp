@@ -1,21 +1,21 @@
 from datetime import datetime
 
-# # Exercise 1
+# Exercise 1
 
-# birthdays = {
-#     "shawn": "1998/06/23",
-#     "ari": "1992/01/10",
-#     "aaron": "1997/07/22",
-#     "daniel": "1999/10/26",
-#     "mom": "1963/05/11"
-# }
+birthdays = {
+    "shawn": "1998/06/23",
+    "ari": "1992/01/10",
+    "aaron": "1997/07/22",
+    "daniel": "1999/10/26",
+    "mom": "1963/05/11"
+}
 
-# print("Hello! Use this script to look up birthdays!!!")
-# user_input = input("Please enter the name of someone's birthday you would like to look up: ")
+print("Hello! Use this script to look up birthdays!!!")
+user_input = input("Please enter the name of someone's birthday you would like to look up: ")
 
-# for name, date in birthdays.items():
-#     if user_input == name :
-#         print(f"{name}: {date}")
+for name, date in birthdays.items():
+    if user_input == name :
+        print(f"{name}: {date}")
 
 # Exercise 2 and 3
 
@@ -61,5 +61,25 @@ for name, date in birthdays.items():
         break
 if found_match == False:
     print(f"Sorry we don't have the birthday information for {user_search}")
-        
-        
+
+# Exercise 4
+# Theres no way this is the challenge. I must be misunderstanding what they want from me in the instructions
+items = {
+    "banana": 4,
+    "apple": 2,
+    "orange": 1.5,
+    "pear": 3
+}
+
+print(f"here is our inventory and their prices. {items}")
+
+
+items = {
+    "banana": {"price": 4 , "stock":10},
+    "apple": {"price": 2, "stock":5},
+    "orange": {"price": 1.5 , "stock":24},
+    "pear": {"price": 3 , "stock":1}
+}
+
+grand_total = sum(data["price"] * data["stock"] for data in items.values())
+print(grand_total)
