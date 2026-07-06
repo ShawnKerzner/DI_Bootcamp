@@ -58,4 +58,15 @@ for dict in sales_data:
 print(total_sales)
         
 customer_spending_profile = {}
+for dict in sales_data:
+    current_customer = dict["customer_id"]
+    total_spend = dict["price"] * dict["quantity"]
+    if current_customer not in customer_spending_profile:
+        customer_spending_profile[current_customer] = total_spend
+    else:
+        customer_spending_profile[current_customer] += total_spend
+print(customer_spending_profile)
 
+for dict in sales_data:
+    dict["total_price"] = dict["price"] * dict["quantity"]
+print(sales_data)
