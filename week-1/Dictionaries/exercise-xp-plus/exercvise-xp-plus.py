@@ -55,7 +55,7 @@ for dict in sales_data:
         total_sales[current_product] = total_revenue
     else:
         total_sales[current_product] += total_revenue
-print(total_sales)
+print(f"total_sales {total_sales}")
         
 customer_spending_profile = {}
 for dict in sales_data:
@@ -65,8 +65,69 @@ for dict in sales_data:
         customer_spending_profile[current_customer] = total_spend
     else:
         customer_spending_profile[current_customer] += total_spend
-print(customer_spending_profile)
+print(f"customer_spending_profile {customer_spending_profile}")
 
 for dict in sales_data:
     dict["total_price"] = dict["price"] * dict["quantity"]
-print(sales_data)
+    print(f"total price for the transaction is {dict["total_price"]}")
+
+high_value_sales = [dict for dict in sales_data if dict["total_price"] > 500]
+high_value_sales.sort(key=lambda dict: dict["total_price"], reverse=True)
+print(f"high value sales from highest to lowest: {high_value_sales}")
+
+purchase_counts = {}
+for dict in sales_data:
+    current_customer = dict["customer_id"]
+    if current_customer not in purchase_counts:
+        purchase_counts[current_customer] = 1
+    else:
+        purchase_counts[current_customer] += 1
+print(f"customer counter: {purchase_counts}")
+
+category_counts = {}
+for dict in sales_data:
+    current_product = dict["product"]
+    if current_product not in category_counts:
+        category_counts[current_product] = 1
+    else:
+        category_counts[current_product] += 1
+print(f"purchases per category {category_counts}")
+
+for item in category_counts:
+    average_rev_per_category = total_sales[item] // category_counts[item]
+    print(average_rev_per_category)
+
+product_quantities = {}
+for dict in sales_data:
+    current_product = dict["product"]
+    current_quantity = dict["quantity"]
+    if current_product not in product_quantities:
+        product_quantities[current_product] = current_quantity
+    else:
+        product_quantities[current_product] += current_quantity
+
+most_popular_product = max(product_quantities, key=lambda prod: product_quantities[prod])
+print(most_popular_product)
+
+print("--- 5. BUSINESS & MARKETING STRATEGIES ---")
+
+print("""
+[STRATEGY 1: The 'High-Volume Hook' (Headphones)]
+- Insight: Headphones are the most popular item by volume (6 units), but bring in a lower price point.
+- Strategy: Use Headphones as a digital ad hook to drive traffic. Implement website cross-selling pop-ups 
+            prompting headphone buyers to look at premium items like Smartphones before checking out.
+""")
+
+print("""
+[STRATEGY 2: The 'Bundle Boost' (Smartphones & Laptops)]
+- Insight: Big-ticket items have high margins but lower purchase frequency.
+- Strategy: Create a 'Tech Essentials Bundle' (e.g., 'Buy a Smartphone or Laptop, get 30% off Headphones'). 
+            This uses your high-volume item to increase the average order value of big purchases.
+""")
+
+print("""
+[STRATEGY 3: VIP Loyalty Targeting]
+- Insight: Customer 1 is a frequent high-value spender, while Customer 3 buys high volume at lower costs.
+- Strategy: Automatically segment your email lists. Send Customer 1 exclusive early access to premium tech 
+            launches. Send Customer 3 volume-based promotions like 'Buy 2 accessories, get 1 free.'
+""")
