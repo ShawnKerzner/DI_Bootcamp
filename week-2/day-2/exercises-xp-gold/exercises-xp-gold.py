@@ -52,16 +52,17 @@ def throw_until_double():
             print(
                 f"Doubles! pair: {throw_1}, {throw_2} Number of attempts: {attempts}")
             break
-    # print(f"Number of attempts: {attempts}")
 
 
-# calls the throw dice function
-# saves result as var1
-# calls the throw dice function again
-# saves result as var 2
-# if var1 =! var2
-# attempts += 1
-# var1 = var2
-# continue call to keep running the loop
-# else print string doubles , both values, and attempts
-throw_until_double()
+def main():
+    all_attempts = []
+    for _ in range(100):
+        attempts = throw_until_double()
+        all_attempts.append(attempts)
+    total_attempts = sum(all_attempts)
+    average_attempts = total_attempts / len(all_attempts)
+    print(f"Total attempts across 100 calls: {total_attempts}")
+    print(f"Average attempts per double: {average_attempts:.2f}")
+
+
+main()
