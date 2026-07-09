@@ -51,18 +51,10 @@ def throw_until_double():
         else:
             print(
                 f"Doubles! pair: {throw_1}, {throw_2} Number of attempts: {attempts}")
-            break
+            return attempts
 
 
 def main():
-    all_attempts = []
+    results = []
     for _ in range(100):
-        attempts = throw_until_double()
-        all_attempts.append(attempts)
-    total_attempts = sum(all_attempts)
-    average_attempts = total_attempts / len(all_attempts)
-    print(f"Total attempts across 100 calls: {total_attempts}")
-    print(f"Average attempts per double: {average_attempts:.2f}")
-
-
-main()
+        result = throw_until_double()
