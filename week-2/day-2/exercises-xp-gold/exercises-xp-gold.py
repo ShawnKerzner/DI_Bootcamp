@@ -4,7 +4,7 @@
 def get_age(year, month, day):
     current_year = 2026
     current_month = 7
-    current_day = int(input("Enter the day of the month"))
+    current_day = int(input("Enter the day of the month: "))
     if current_day < day:
         current_month -= 1
     if current_month < month:
@@ -12,31 +12,22 @@ def get_age(year, month, day):
     age = current_year - year
     return age
 
-# print(get_age(1998, 6, 23))
+
+def can_retire(date_of_birth, gender):
+
+    year, month, day = date_of_birth.split("/")
+    age = get_age(int(year), int(month), int(day))
+
+    if gender == "m":
+        age_of_retirement = 67
+    if gender == "f":
+        age_of_retirement = 62
+
+    if age >= age_of_retirement:
+        print("You can retire")
+    else:
+        print("You can't retire")
 
 
-# def can_retire(gender, date_of_birth):
-date_of_birth = "1998/06/23"
-date_of_birth_list = date_of_birth.split("/")
-print(date_of_birth_list)
-for item in date_of_birth_list:
-    year = item[0]
-    month = item[1]
-    day = item[2]
-
-#     if gender == "male":
-#         retirment_age = 67
-#         if get_age(date_of_birth.split("/")) >= retirment_age:
-#             print("Congrats you can retire")
-#         else:
-#             print("Sorry you are not ready to retire")
-#     else:
-#         gender == "female"
-#         retirment_age = 62
-#         if get_age(date_of_birth.split("/")) >= retirment_age:
-#             print("Congrats you can retire")
-#         else:
-#             print("Sorry you are not ready to retire")
-
-
-# print(can_retire("male", "1993/09/21"))
+can_retire("1959/06/23", "m")
+can_retire("1965/06/23", "f")
