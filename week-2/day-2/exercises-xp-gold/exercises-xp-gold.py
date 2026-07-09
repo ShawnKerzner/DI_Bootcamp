@@ -16,9 +16,10 @@ def get_age(year, month, day):
 print(get_age(1998, 6, 23))
 
 
-def can_retire(gender, date_of_birth):
-    date_of_birth.split("/")
-    print(date_of_birth)
+# def can_retire(gender, date_of_birth):
+date_of_birth = "1998/06/23"
+date_of_birth.split("/")
+print(date_of_birth)
 # comment out function to test if date of birth split works
 # goal is to seperate the date of birth and divide it into 3 seperate variables
 
