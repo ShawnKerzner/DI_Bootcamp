@@ -1,12 +1,10 @@
-import datetime
-# Exercise 1
 
+# Exercise 1
 
 def get_age(year, month, day):
     current_year = 2026
     current_month = 7
     current_day = int(input("Enter the day of the month"))
-    age_year = current_year - year
     if current_day < day:
         current_month -= 1
     if current_month < month:
