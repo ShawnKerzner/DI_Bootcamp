@@ -57,4 +57,11 @@ def throw_until_double():
 def main():
     results = []
     for _ in range(100):
-        result = throw_until_double()
+        results.append(throw_until_double())
+    results_sum = sum(results)
+    results_avg = results_sum / len(results)
+    print(
+        f"Number of attempts to reach 100 doubles: {results_sum}, average number of throws to reach a double: {results_avg} ")
+
+
+main()
