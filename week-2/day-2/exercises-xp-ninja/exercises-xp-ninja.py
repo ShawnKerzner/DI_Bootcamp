@@ -36,9 +36,16 @@ def english_to_morse(english_string):
 
 
 def morse_to_english(morse_string):
+    if not isinstance(morse_string, str):
+        raise TypeError("Input needs to be a string")
     if morse_string == "":
         raise ValueError(
             "The variable morse_string needs to contain an actual string with characters")
+    morse_characters = (".", "-", "/", " ")
+    for char in morse_string:
+        if char not in morse_characters:
+            raise ValueError(
+                "Input needs to made up of actual morse code characters")
     english_dict = {'.-': 'a', '-...': 'b', '-.-.': 'c', '-..': 'd', '.': 'e', '..-.': 'f', '--.': 'g', '....': 'h', '..': 'i', '.---': 'j', '-.-': 'k', '.-..': 'l', '--': 'm', '-.': 'n', '---': 'o', '.--.': 'p', '--.-': 'q', '.-.': 'r', '...': 's',
                     '-': 't', '..-': 'u', '...-': 'v', '.--': 'w', '-..-': 'x', '-.--': 'y', '--..': 'z', '-----': '0', '.----': '1', '..---': '2', '...--': '3', '....-': '4', '.....': '5', '-....': '6', '--...': '7', '---..': '8', '----.': '9', '/': ' '}
     english_list = []
@@ -46,7 +53,6 @@ def morse_to_english(morse_string):
     for item in morse_list:
         english_letters = []
         word_to_letter = item.split()
-        print(word_to_letter)
         for letter in word_to_letter:
             if letter in english_dict:
                 english_letters.append(english_dict[letter])
@@ -60,4 +66,4 @@ def morse_to_english(morse_string):
 # morse_to_english(
     # ".-.. . - ... / ... . . / .. ..-. / - .... .. ... / .-. . .- .-.. .-.. -.-- / .-- --- .-. -.- ...")
 
-morse_to_english("")
+morse_to_english(".- zzzz -...")
