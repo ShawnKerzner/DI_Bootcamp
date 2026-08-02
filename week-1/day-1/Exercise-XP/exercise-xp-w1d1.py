@@ -1,13 +1,13 @@
 # Exercise 1: Hello World
-print("Hello world " * 4)
+print("Hello world \n" * 4)
 
 # Exercise2: Some Math
-print((99 ^ 3)*8)
+print((99 ** 3)*8)
 
 # Exercis 3: What is the output?
 # >>> 5 < 3 # False
 # >>> 3 == 3 # True
-# >>> 3 == "3" # TypeError cannot compare int to strings
+# >>> 3 == "3" # False because even though they both are 3 one is an int and one is a string
 # >>> "3" > 3 # Type Error same reason as above
 # >>> "Hello" == "hello" # False capitalization counts
 print(5 < 3)
@@ -34,7 +34,7 @@ if a > b:
     print("Hello World")
 
 # Exercise 7: Odd of Even
-number = int(input("Enter a nmuber: "))
+number = int(input("Enter a number: "))
 if number % 2 == 0:
     print("Even")
 else:
