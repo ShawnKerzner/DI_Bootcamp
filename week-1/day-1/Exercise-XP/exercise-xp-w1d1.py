@@ -2,7 +2,7 @@
 print("Hello world " * 4)
 
 # Exercise2: Some Math
-print((99^3)*8)
+print((99 ^ 3)*8)
 
 # Exercis 3: What is the output?
 # >>> 5 < 3 # False
@@ -10,11 +10,11 @@ print((99^3)*8)
 # >>> 3 == "3" # TypeError cannot compare int to strings
 # >>> "3" > 3 # Type Error same reason as above
 # >>> "Hello" == "hello" # False capitalization counts
-# print(5 < 3)
-# print(3 == 3)
-# print(3 == "3")
+print(5 < 3)
+print(3 == 3)
+print(3 == "3")
 # print("3" > 3)
-# print("Hello" == "hello")
+print("Hello" == "hello")
 
 # Exercise 4: Your computer brand
 computer_brand = "Lenovo"
