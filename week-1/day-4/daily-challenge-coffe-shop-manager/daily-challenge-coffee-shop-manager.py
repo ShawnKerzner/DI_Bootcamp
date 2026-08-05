@@ -28,5 +28,17 @@ def update_price(menu_dict):
         print("Item not found")
 
 
-update_price(menu)
-print(menu.items())
+def delete_items(menu_dict):
+    item_delete = input("Which item would you like to remove? ")
+    if item_delete in menu_dict:
+        del menu_dict[item_delete]
+    else:
+        print("Item not found")
+
+
+def show_options():
+    print("1. Show Menu\n", "2. Add Item\n",
+          "3.Update Price\n", "4. Delete Item\n", "5. Exit")
+
+
+show_options()
