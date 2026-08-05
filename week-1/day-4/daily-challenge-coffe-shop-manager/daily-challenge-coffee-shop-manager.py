@@ -41,4 +41,24 @@ def show_options():
           "3.Update Price\n", "4. Delete Item\n", "5. Exit")
 
 
-show_options()
+def run_coffee_shop():
+    running = True
+    while running:
+        show_options()
+        action = int(input("Select one of the following numbers above: "))
+        if action < 1 or action > 5:
+            raise ValueError("Not an option")
+        elif action == 1:
+            show_menu(menu_dict=menu)
+        elif action == 2:
+            add_item(menu_dict=menu)
+        elif action == 3:
+            update_price(menu_dict=menu)
+        elif action == 4:
+            delete_items(menu_dict=menu)
+        else:
+            print('Goodbye!!!')
+            running = False
+
+
+run_coffee_shop()
