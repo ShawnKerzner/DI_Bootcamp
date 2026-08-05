@@ -7,3 +7,18 @@ def show_menu(menu_dict):
     else:
         for key, value in menu_dict.items():
             print(f"{key} - {value}")
+
+
+def add_item(menu_dict):
+    drink_name = str(input("Name of the new drink: "))
+    if drink_name in menu_dict:
+        print("Item already exists")
+    else:
+        drink_price = float(input("Price of new drink: "))
+        menu_dict[drink_name] = drink_price
+        print(f"{drink_name} added!")
+
+
+# add_item(menu)
+
+print(menu.items())
