@@ -19,6 +19,14 @@ def add_item(menu_dict):
         print(f"{drink_name} added!")
 
 
-# add_item(menu)
+def update_price(menu_dict):
+    select_drink = input("Which drink would you like to update? ")
+    if select_drink in menu_dict:
+        new_price = float(input("Insert new price: "))
+        menu_dict[select_drink] = new_price
+    else:
+        print("Item not found")
 
+
+update_price(menu)
 print(menu.items())
