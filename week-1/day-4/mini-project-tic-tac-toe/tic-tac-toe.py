@@ -14,8 +14,26 @@ def display_board(grid):
 
 def player_input(player):
     while True:
-        select_row = int(input("Enter row: "))
-        select_column = int(input("Enter column: "))
+        while True:
+            select_row = int(input("Enter row: "))
+            if len(select_row) > 1:
+                raise ValueError("Can only be one of the following: 0, 1, 2")
+            elif select_row < 0 or select_row > 2:
+                raise ValueError("Can only be one of the following: 0, 1, 2")
+            elif select_row == "" or select_row == " ":
+                raise ValueError("Can only be one of the following: 0, 1, 2")
+            else:
+                break
+        while True:
+            select_column = int(input("Enter column: "))
+            if len(select_row) > 1:
+                raise ValueError("Can only be one of the following: 0, 1, 2")
+            elif select_row < 0 or select_row > 2:
+                raise ValueError("Can only be one of the following: 0, 1, 2")
+            elif select_row == "" or select_row == " ":
+                raise ValueError("Can only be one of the following: 0, 1, 2")
+            else:
+                break
         marked = grid[select_row][select_column]
         if marked != " ":
             print("This spot is already taken")
@@ -39,6 +57,10 @@ def check_win(board, player):
                 return True
             elif board[0][2] == "X" and board[1][2] == "X" and board[2][2] == "X":
                 return True
+            elif board[0][0] == "X" and board[1][1] == "X" and board[2][2] == "X":
+                return True
+            elif board[0][2] == "X" and board[1][1] == "X" and board[2][0] == "X":
+                return True
             else:
                 return False
     if player == 2:
@@ -54,6 +76,10 @@ def check_win(board, player):
             elif board[0][1] == "O" and board[1][1] == "O" and board[2][1] == "O":
                 return True
             elif board[0][2] == "O" and board[1][2] == "O" and board[2][2] == "O":
+                return True
+            elif board[0][0] == "O" and board[1][1] == "O" and board[2][2] == "O":
+                return True
+            elif board[0][0] == "O" and board[1][1] == "O" and board[2][2] == "O":
                 return True
             else:
                 return False
@@ -76,7 +102,7 @@ def play():
         player_input(player)
         if check_win(grid, player) == True:
             print(f"Player{player} wins!")
-            display_board()
+            display_board(grid)
             break
         else:
             if check_tie(grid) == True:
