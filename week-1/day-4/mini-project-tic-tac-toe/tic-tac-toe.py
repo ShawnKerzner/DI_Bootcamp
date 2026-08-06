@@ -24,7 +24,7 @@ def player_input(player):
             break
 
 
-player_input(1)
+player_input(2)
 display_board(grid)
 
 
@@ -61,3 +61,8 @@ def check_win(board, player):
                 return True
             else:
                 return False
+
+
+def check_tie(board):
+    if " " not in board and check_win == False:
+        return True
