@@ -24,45 +24,65 @@ def player_input(player):
             break
 
 
-player_input(2)
-display_board(grid)
-
-
 def check_win(board, player):
     if player == 1:
         for space in board:
-            if board[0][0] == "X" and board[0][1] == "X" and board[0][2]:
+            if board[0][0] == "X" and board[0][1] == "X" and board[0][2] == "X":
                 return True
-            elif board[1][0] == "X" and board[1][1] == "X" and board[1][2]:
+            elif board[1][0] == "X" and board[1][1] == "X" and board[1][2] == "X":
                 return True
-            elif board[2][0] == "X" and board[2][1] == "X" and board[2][2]:
+            elif board[2][0] == "X" and board[2][1] == "X" and board[2][2] == "X":
                 return True
-            elif board[0][0] == "X" and board[1][0] == "X" and board[2][0]:
+            elif board[0][0] == "X" and board[1][0] == "X" and board[2][0] == "X":
                 return True
-            elif board[0][1] == "X" and board[1][1] == "X" and board[2][1]:
+            elif board[0][1] == "X" and board[1][1] == "X" and board[2][1] == "X":
                 return True
-            elif board[0][2] == "X" and board[1][2] == "X" and board[2][2]:
+            elif board[0][2] == "X" and board[1][2] == "X" and board[2][2] == "X":
                 return True
             else:
                 return False
     if player == 2:
         for space in board:
-            if board[0][0] == "O" and board[0][1] == "O" and board[0][2]:
+            if board[0][0] == "O" and board[0][1] == "O" and board[0][2] == "O":
                 return True
-            elif board[1][0] == "O" and board[1][1] == "O" and board[1][2]:
+            elif board[1][0] == "O" and board[1][1] == "O" and board[1][2] == "O":
                 return True
-            elif board[2][0] == "O" and board[2][1] == "O" and board[2][2]:
+            elif board[2][0] == "O" and board[2][1] == "O" and board[2][2] == "O":
                 return True
-            elif board[0][0] == "O" and board[1][0] == "O" and board[2][0]:
+            elif board[0][0] == "O" and board[1][0] == "O" and board[2][0] == "O":
                 return True
-            elif board[0][1] == "O" and board[1][1] == "O" and board[2][1]:
+            elif board[0][1] == "O" and board[1][1] == "O" and board[2][1] == "O":
                 return True
-            elif board[0][2] == "O" and board[1][2] == "O" and board[2][2]:
+            elif board[0][2] == "O" and board[1][2] == "O" and board[2][2] == "O":
                 return True
             else:
                 return False
 
 
 def check_tie(board):
-    if " " not in board and check_win == False:
-        return True
+    spread = [str(inner_list) for inner_list in board]
+    spread = "".join(spread)
+    return " " not in spread
+
+
+def play():
+    counter = 1
+    while True:
+        if counter % 2 == 0:
+            player = 2
+        else:
+            player = 1
+        display_board(grid)
+        player_input(player)
+        if check_win(grid, player) == True:
+            print(f"Player{player} wins!")
+            display_board()
+            break
+        else:
+            if check_tie(grid) == True:
+                print("It is a tie!")
+                break
+        counter += 1
+
+
+play()
