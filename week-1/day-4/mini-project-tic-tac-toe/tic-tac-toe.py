@@ -15,27 +15,34 @@ def display_board(grid):
 def player_input(player):
     while True:
         while True:
-            select_row = input("Enter row: ")
-            print(len(select_row))
-            if len(select_row) >= 1:
-                raise ValueError(
-                    "Input must contain one of the following: 0, 1, 2")
-            elif select_row != "0" and select_row != "1" and select_row != "2":
-                raise ValueError(
-                    "Input must contain one of the following: 0, 1, 2")
-            else:
-                break
+            raw_row = (input("Enter row: "))
+            try:
+                select_row = int(raw_row)
+            except ValueError:
+                print("Error: Input must an integer between the values 0 - 2.")
+                continue
+            if len(raw_row) > 1:
+                print("Error: Input must be a single space")
+                continue
+            if select_row not in (0, 1, 2):
+                print("Error: Input must an integer between the values 0 - 2.")
+                continue
+            break
         while True:
-            select_column = input("Enter column: ")
-            if len(select_column) >= 1:
-                raise ValueError(
-                    "Input must contain one of the following: 0, 1, 2")
-            elif select_column != "0" and select_column != "1" and select_column != "2":
-                raise ValueError(
-                    "Input must contain one of the following: 0, 1, 2")
-            else:
-                break
-        marked = grid[int(select_row)][int(select_column)]
+            raw_column = (input("Enter column: "))
+            try:
+                select_column = int(raw_column)
+            except ValueError:
+                print("Error: Input must an integer between the values 0 - 2.")
+                continue
+            if len(raw_column) > 1:
+                print("Error: Input must be a single space")
+                continue
+            if select_column not in (0, 1, 2):
+                print("Error: Input must an integer between the values 0 - 2.")
+                continue
+            break
+        marked = grid[(select_row)][(select_column)]
         if marked != " ":
             print("This spot is already taken")
         else:
@@ -87,9 +94,10 @@ def check_win(board, player):
 
 
 def check_tie(board):
-    spread = [str(inner_list) for inner_list in board]
-    spread = "".join(spread)
-    return " " not in spread
+    for inner_list in board:
+        if " " in inner_list:
+            return False
+    return True
 
 
 def play():
@@ -97,8 +105,10 @@ def play():
     while True:
         if counter % 2 == 0:
             player = 2
+            print("Player 2's turn")
         else:
             player = 1
+            print("Player 1's turn")
         display_board(grid)
         player_input(player)
         if check_win(grid, player) == True:
