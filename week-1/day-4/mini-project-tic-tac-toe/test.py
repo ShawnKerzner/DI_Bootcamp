@@ -1,6 +1,5 @@
-
-outer_list = [[" ", 2, 3, 4], [2, 5, 5, 9]]
-tie = [str(inner_list) for inner_list in outer_list]
-spread = "".join(tie)
-print(tie)
-print(spread)
+select_row = input("Input")
+if select_row != "0" and select_row != "1" and select_row != "2":
+    print(True)
+else:
+    print(False)

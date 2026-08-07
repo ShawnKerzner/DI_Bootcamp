@@ -15,26 +15,27 @@ def display_board(grid):
 def player_input(player):
     while True:
         while True:
-            select_row = int(input("Enter row: "))
-            if len(select_row) > 1:
-                raise ValueError("Can only be one of the following: 0, 1, 2")
-            elif select_row < 0 or select_row > 2:
-                raise ValueError("Can only be one of the following: 0, 1, 2")
-            elif select_row == "" or select_row == " ":
-                raise ValueError("Can only be one of the following: 0, 1, 2")
+            select_row = input("Enter row: ")
+            print(len(select_row))
+            if len(select_row) >= 1:
+                raise ValueError(
+                    "Input must contain one of the following: 0, 1, 2")
+            elif select_row != "0" and select_row != "1" and select_row != "2":
+                raise ValueError(
+                    "Input must contain one of the following: 0, 1, 2")
             else:
                 break
         while True:
-            select_column = int(input("Enter column: "))
-            if len(select_row) > 1:
-                raise ValueError("Can only be one of the following: 0, 1, 2")
-            elif select_row < 0 or select_row > 2:
-                raise ValueError("Can only be one of the following: 0, 1, 2")
-            elif select_row == "" or select_row == " ":
-                raise ValueError("Can only be one of the following: 0, 1, 2")
+            select_column = input("Enter column: ")
+            if len(select_column) >= 1:
+                raise ValueError(
+                    "Input must contain one of the following: 0, 1, 2")
+            elif select_column != "0" and select_column != "1" and select_column != "2":
+                raise ValueError(
+                    "Input must contain one of the following: 0, 1, 2")
             else:
                 break
-        marked = grid[select_row][select_column]
+        marked = grid[int(select_row)][int(select_column)]
         if marked != " ":
             print("This spot is already taken")
         else:
