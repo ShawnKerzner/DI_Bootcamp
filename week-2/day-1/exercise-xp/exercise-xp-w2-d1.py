@@ -53,3 +53,32 @@ def dog_height_comparison(dog1, dog2):
 
 
 dog_height_comparison(davids_dog, sarahs_dog)
+
+# Exercise 3
+
+
+class Song:
+    def __init__(self, lyrics):
+        self.lyrics = lyrics
+
+    def sing_me_a_song(lyrics):
+        for lyric in lyrics:
+            print(lyric)
+
+
+stairway = Song(["There’s a lady who's sure", "all that glitters is gold",
+                "and she’s buying a stairway to heaven"])
+
+Song.sing_me_a_song(stairway.lyrics)
+
+# Exercise 4
+
+
+class Zoo:
+    def __init__(self, zoo_name, animals):
+        self.zoo_name = zoo_name
+        self.animals = animals
+
+    def add_animal(new_animal):
+        animals = [new_animal for new_animal in animals if new_animal not in animals animals.append(new_animal)]
+        return animals
