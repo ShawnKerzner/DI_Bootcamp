@@ -80,5 +80,34 @@ class Zoo:
         self.animals = animals
 
     def add_animal(new_animal):
-        animals = [new_animal for new_animal in animals if new_animal not in animals animals.append(new_animal)]
-        return animals
+        if new_animal not in Zoo.animals:
+            Zoo.animals.append(new_animal)
+
+    def get_animals(animals):
+        print(animals)
+
+    def sell_animal(animal_sold):
+        if animal_sold in Zoo.animal:
+            Zoo.animal.remove(animal_sold)
+
+    def sort_animals(animals):
+        animals_dict = {}
+        sorted_animals = sorted(animals)
+        for animal in animals:
+            if animal:
+                first_letter = animal[0].lower()
+                animals_dict[first_letter].append(animal)
+
+    def get_groups(animals_dict):
+        print(animals_dict)
+
+
+ramat_gan_zoo = Zoo("Ramat Gan Zoo")
+ramat_gan_zoo.add_animal("Giraffe")
+ramat_gan_zoo.add_animal("Bear")
+ramat_gan_zoo.add_animal("Baboon")
+ramat_gan_zoo.get_animals()
+ramat_gan_zoo.sell_animal("Bear")
+ramat_gan_zoo.get_animals()
+ramat_gan_zoo.sort_animals()
+ramat_gan_zoo.get_groups()
