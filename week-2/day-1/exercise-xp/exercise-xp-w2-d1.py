@@ -21,38 +21,38 @@
 # Exercise 2
 
 
-class Dog:
-    def __init__(self, dog_name, dog_height):
-        self.name = dog_name
-        self.height = dog_height
+# class Dog:
+#     def __init__(self, dog_name, dog_height):
+#         self.name = dog_name
+#         self.height = dog_height
 
-    def bark(self):
-        return f"{self.name} goes woof!"
+#     def bark(self):
+#         return f"{self.name} goes woof!"
 
-    def jump(self):
-        return f"{self.name} jumps {self.height * 2} cm high!"
-
-
-davids_dog = Dog("Max", 50)
-sarahs_dog = Dog("Willow", 75)
-
-dogs = (davids_dog, sarahs_dog)
-
-for dog in dogs:
-    print(f"{dog.bark()}")
-    print(f"{dog.jump()}")
+#     def jump(self):
+#         return f"{self.name} jumps {self.height * 2} cm high!"
 
 
-def dog_height_comparison(dog1, dog2):
-    if dog1.height > dog2.height:
-        print(f"{dog1.name} is bigger")
-    elif dog2.height > dog1.height:
-        print(f"{dog2.name} is bigger")
-    else:
-        print("Both dogs are the same height!")
+# davids_dog = Dog("Max", 50)
+# sarahs_dog = Dog("Willow", 75)
+
+# dogs = (davids_dog, sarahs_dog)
+
+# for dog in dogs:
+#     print(f"{dog.bark()}")
+#     print(f"{dog.jump()}")
 
 
-dog_height_comparison(davids_dog, sarahs_dog)
+# def dog_height_comparison(dog1, dog2):
+#     if dog1.height > dog2.height:
+#         print(f"{dog1.name} is bigger")
+#     elif dog2.height > dog1.height:
+#         print(f"{dog2.name} is bigger")
+#     else:
+#         print("Both dogs are the same height!")
+
+
+# dog_height_comparison(davids_dog, sarahs_dog)
 
 # Exercise 3
 
@@ -74,41 +74,38 @@ dog_height_comparison(davids_dog, sarahs_dog)
 # Exercise 4
 
 
-# class Zoo:
-#     def __init__(self, zoo_name):
-#         self.zoo_name = zoo_name
+class Zoo:
+    def __init__(self, zoo_name):
+        self.zoo_name = zoo_name
+        self.animals = []
 
-#     animals = []
+    def add_animal(self, new_animal):
+        if new_animal not in self.animals:
+            self.animals.append(new_animal)
 
-#     def add_animal(self):
-#         if new_animal not in Zoo.animals:
-#             Zoo.animals.append(new_animal)
+    def get_animals(self):
+        print(self.animals)
 
-#     def get_animals(animals):
-#         print(animals)
+    def sell_animal(self, animal_sold):
+        if animal_sold in self.animals:
+            self.animals.remove(animal_sold)
 
-#     def sell_animal(animal_sold):
-#         if animal_sold in Zoo.animal:
-#             Zoo.animal.remove(animal_sold)
+    def sort_animals(self):
+        self.animals_dict = {}
+        for animal in self.animals:
+            first_letter = animal[0].lower()
+            self.animals_dict.setdefault(first_letter, []).append(animal)
 
-#     def sort_animals(animals):
-#         animals_dict = {}
-#         sorted_animals = sorted(animals)
-#         for animal in animals:
-#             if animal:
-#                 first_letter = animal[0].lower()
-#                 animals_dict[first_letter].append(animal)
-
-#     def get_groups(animals_dict):
-#         print(animals_dict)
+    def get_groups(self):
+        print(self.animals_dict)
 
 
-# ramat_gan_zoo = Zoo("Ramat Gan Zoo")
-# ramat_gan_zoo.add_animal("Giraffe")
-# ramat_gan_zoo.add_animal("Bear")
-# ramat_gan_zoo.add_animal("Baboon")
-# ramat_gan_zoo.get_animals()
-# ramat_gan_zoo.sell_animal("Bear")
-# ramat_gan_zoo.get_animals()
-# ramat_gan_zoo.sort_animals()
-# ramat_gan_zoo.get_groups()
+ramat_gan_zoo = Zoo("Ramat Gan Zoo")
+ramat_gan_zoo.add_animal("Giraffe")
+ramat_gan_zoo.add_animal("Bear")
+ramat_gan_zoo.add_animal("Baboon")
+ramat_gan_zoo.get_animals()
+ramat_gan_zoo.sell_animal("Bear")
+ramat_gan_zoo.get_animals()
+ramat_gan_zoo.sort_animals()
+ramat_gan_zoo.get_groups()
