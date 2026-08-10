@@ -26,10 +26,10 @@ class Dog:
         self.name = dog_name
         self.height = dog_height
 
-    def bark(dog):
+    def bark(self):
         return f"{dog.name} goes woof!"
 
-    def jump(dog):
+    def jump(self):
         return f"{dog.name} jumps {dog.height * 2} cm high!"
 
 
@@ -61,25 +61,26 @@ class Song:
     def __init__(self, lyrics):
         self.lyrics = lyrics
 
-    def sing_me_a_song(lyrics):
-        for lyric in lyrics:
+    def sing_me_a_song(self):
+        for lyric in self:
             print(lyric)
 
 
 stairway = Song(["There’s a lady who's sure", "all that glitters is gold",
                 "and she’s buying a stairway to heaven"])
 
-Song.sing_me_a_song(stairway.lyrics)
+stairway.sing_me_a_song()
 
 # Exercise 4
 
 
 class Zoo:
-    def __init__(self, zoo_name, animals):
+    def __init__(self, zoo_name):
         self.zoo_name = zoo_name
-        self.animals = animals
 
-    def add_animal(new_animal):
+    animals = []
+
+    def add_animal(self):
         if new_animal not in Zoo.animals:
             Zoo.animals.append(new_animal)
 
