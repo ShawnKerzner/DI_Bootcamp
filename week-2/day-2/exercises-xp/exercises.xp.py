@@ -1,3 +1,4 @@
+import random
 # # Exercise 1
 # class Pets():
 #     def __init__(self, animals):
@@ -76,3 +77,19 @@ print(dog2.run_speed())
 print(dog1.fight(dog2))
 
 # Exercise 3
+
+
+class PetDog(Dog):
+    def __init__(self, trained=False):
+        self.trained = trained
+
+    def train(self):
+        self.trained = True
+        return f"{self.bark()}"
+
+    def play(self, *args):
+        print(f"{args} all play together")
+
+    def do_a_trick(self):
+        if self.trained == True:
+            print()
