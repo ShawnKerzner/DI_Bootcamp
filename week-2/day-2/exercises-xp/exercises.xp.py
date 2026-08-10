@@ -30,3 +30,14 @@ class Chartreux(Cat):
 
 class Siamese(Cat):
     pass
+
+
+toby = Bengal("Toby", 3)
+crouton = Chartreux("Crouton", 5)
+fuego = Siamese("Fuego", 1)
+
+all_cats = [toby, crouton, fuego]
+
+sara_pets = Pets(all_cats)
+
+sara_pets.walk()
