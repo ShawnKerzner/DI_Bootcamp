@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="elem" about="Elephant">Hello World!</div>
+    <script>
+        const newDiv = document.querySelector("#elem");
+        newDiv.setAttribute("style", "color: blue");
+        alert(newDiv.getAttribute("about"));
+        for (let attr of newDiv.attributes) {
+            console.log("key: " + attr.name + " Value: " + attr.value);
+        }
+        console.log(newDiv)
+    </script>
+</body>
+
+</html>
