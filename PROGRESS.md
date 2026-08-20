@@ -2,6 +2,21 @@
 
 This is the running, human-readable log kept by the Student Progress Coach. Each daily review adds a new dated entry at the **top** of this file (newest first), covering commits since the last review, what changed, and any recommendations. See `CLAUDE.md` for the full behavior contract.
 
+## 2026-08-20
+
+*Catch-up review — no run happened on 2026-08-19, so this covers three days of work (2026-08-18 evening through this morning).*
+
+**Since yesterday:** 7 commits, 22 files — javascript fundamentals, loops, switch statements, string methods, DOM manipulation, input validation, npm packages
+
+**What I saw:** Big jump this week: you moved from Python into JavaScript (`week-3/day-1`), working through `course-notes` on switch statements, short-circuit evaluation (`short-circuiting-js.js`), string methods (`string-split-method-in-js.js`, `index-of-method-in-js.js`), and a small DOM exercise wiring `script.js` up to `exercise-1-html.html`. In `exercise-xp/exercises-xp.js` you kept the same habit from `warmup.py` last time — commenting out each finished exercise instead of deleting it — so Exercise 1's array methods and Exercise 2's loop-with-suffix logic are still sitting there above Exercise 3. Exercise 3's `do...while` loop does real input validation: it checks `isNaN(user_number)` and prints a message before looping again instead of crashing on bad input, which carries the error-handling instinct forward from the `Pagination` class you built last time. One thing worth knowing: that same commit pulled the whole `readline-sync` package into git — `node_modules/readline-sync/` is now checked in (2,500+ lines) because there's no `.gitignore` in the repo yet. Also noticed `claude-course/day-3/2students.zip` is sitting untracked and unopened — looks like tomorrow's material, not started yet.
+
+**Recommendations:**
+- Add a `.gitignore` at the repo root with `node_modules/`, `__pycache__/`, and `__MACOSX/` in it — right now `week-3/day-1/exercise-xp/node_modules/` is fully committed, and there are stray `__pycache__`/`__MACOSX` files untracked under `claude-course/day-2/sample-project/` from unzipping that project.
+- In `exercises-xp.js` line 52, swap `while (1)` for `while (true)` — same behavior, but `true` says what you mean instead of relying on truthy-number trivia.
+- Two recommendations from 2026-08-18 are still open and now three days old: `Pagination.__init__`'s `if items == None` (should be `is None`) and the pagination bonus step. Worth a quick pass before they get buried under this week's JS work.
+
+**Streak:** 3 days in a row
+
 ## 2026-08-18
 
 **Since yesterday:** 1 commit, 1 file — pagination, object-oriented programming, error handling
