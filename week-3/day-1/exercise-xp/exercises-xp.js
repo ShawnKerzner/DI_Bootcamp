@@ -75,20 +75,32 @@
 // };
 // console.log(building.numberOfRoomsAndRent.dan[1])
 
-// Exercise 5
-const family = {
-    Dad: 65,
-    Mom: 62,
-    Ari: 34,
-    Erin: 29,
-    Shawn: 28,
-    Daniel: 27,
-}
-for (let key in family) {
-    console.log(key)
-}
-for (let key in family) {
-    console.log(family[key])
-}
+// // Exercise 5
+// const family = {
+//     Dad: 65,
+//     Mom: 62,
+//     Ari: 34,
+//     Erin: 29,
+//     Shawn: 28,
+//     Daniel: 27,
+// }
+// for (let key in family) {
+//     console.log(key)
+// }
+// for (let key in family) {
+//     console.log(family[key])
+// }
 
+// Exercise 6
+const details = {
+    my: 'name',
+    is: 'Rudolf',
+    the: 'reindeer'
+};
+
+let str = "";
+for (let arrayItems of Object.entries(details)) {
+    str += arrayItems.join(" ") + " "
+}
+console.log(str);
 
