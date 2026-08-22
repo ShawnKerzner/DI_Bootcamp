@@ -2,6 +2,23 @@
 
 This is the running, human-readable log kept by the Student Progress Coach. Each daily review adds a new dated entry at the **top** of this file (newest first), covering commits since the last review, what changed, and any recommendations. See `CLAUDE.md` for the full behavior contract.
 
+## 2026-08-22
+
+*Delayed catch-up review — last run was 2026-08-20, so no review happened on 2026-08-21. This entry covers both days.*
+
+**Since yesterday:** 9 commits, 9 files — arrow functions, default parameters, DOM manipulation, objects & string refactoring
+
+**What I saw:** Good range across two days. In `week-3/day-1/exercise-xp/exercises-xp.js` you finally uncommented Exercises 1-2 instead of leaving them dead-code'd — that's the fix from last time actually landing. Exercises 4-7 add real object/loop work: nested object access in the `building` exercise, a `for...in` walk over `family`, and `Object.entries()` in Exercise 6 to build a string from key/value pairs, which is a step up from manual key lookups. `week-3/day-2/daily-challenge/daily-challenge-.js` is the most interesting piece: you dynamically `createElement`'d a `div` per planet, built a CSS rule per planet with a template literal, and injected the whole batch via one `<style>` tag appended to `<head>` — that's a legitimately clean way to avoid inline styles in a loop. `function-notes.js` introduces arrow functions and a default parameter (`(x, y = 6)`), but the last two lines call `console.log(m)` *before* `myFunction(0)` runs, and `m` only exists inside that function's scope — so as written this throws `ReferenceError: m is not defined` before it ever reaches your function call. Worth tracing through, since scope was literally the topic of the notes.
+
+**Recommendations:**
+- Fix the `console.log(m)` ordering bug in `function-notes.js` — move it after the `myFunction(0)` call (or better, don't reference `m` outside the function at all) and actually run the file to confirm it stops throwing.
+- The `.gitignore` recommendation is now three reviews old — `__MACOSX/` and `sample-project/__pycache__/` are still sitting untracked. Ten minutes to add `node_modules/`, `__pycache__/`, and `__MACOSX/` to a root `.gitignore` clears this permanently instead of it resurfacing every review.
+- You're still commenting out finished attempts instead of deleting them (`daily-challenge-w3-d1.js`'s old version, the old `helloWorld` function declaration in `function-notes.js`) — this has been flagged on 2026-08-18 and 2026-08-20 too. Git already keeps your history; lean on `git log`/`git diff` instead of dead code sitting in the file. Worth actually changing this habit rather than noting it again next time.
+- `week-3/day-2/exercises-xp/exercises-xp.js` Exercise 1 is still commented out and never called — either finish it or note why it's skipped so it doesn't look abandoned.
+- `claude-course/day-3/2students.zip` has now been sitting unopened for three days — worth a look in case it's blocking upcoming material.
+
+**Streak:** 6 days in a row
+
 ## 2026-08-20
 
 *Catch-up review — no run happened on 2026-08-19, so this covers three days of work (2026-08-18 evening through this morning).*
