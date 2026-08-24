@@ -1,0 +1,46 @@
+/* ---------- Global Elements ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    overflow: hidden;
+    background-color: lightgray;
+}
+
+button {
+    border-radius: 15px;
+}
+
+/* ---------- Sections ---------- */
+#color-pallete {
+    height: 100vh;
+    flex-basis: 20%;
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding: 8px;
+}
+
+#coloring-board {
+    background-color: whitesmoke;
+    height: 100vh;
+    flex-basis: 80%;
+    padding: 8px;
+}
+
+/* ---------- Components ---------- */
+#clear-btn {
+    grid-column: span 3;
+    font-family: "Fredoka", sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+}
