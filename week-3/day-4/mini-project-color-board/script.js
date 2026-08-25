@@ -27,9 +27,9 @@ function giveColorToSwatch() {
 }
 
 function selectColor(event) {
+    console.log(event.target);
     if (event.target.classList.contains("color-swatch")) {
         selectedColor = event.target.dataset.color;
-        console.log(selectedColor);
     }
 }
 
@@ -37,33 +37,26 @@ function paintSquare(element) {
     element.style.backgroundColor = selectedColor;
 }
 
-function handleMouseDown() {
+function handleMouseDown(event) {
+    event.preventDefault();
     mouseDown = true;
+    if (event.target.classList.contains("indv-cells")) {
+        paintSquare(event.target);
+    }
+}
 
-
+function handleMouseOver(event) {
+    if (mouseDown) {
+        if (event.target.classList.contains("indv-cells")) {
+            paintSquare(event.target)
+        }
+    }
 }
 
 colorPallete.addEventListener("click", selectColor);
 coloringBoard.addEventListener("mousedown", handleMouseDown);
+coloringBoard.addEventListener("mouseover", handleMouseOver);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-generateBoard()
-giveColorToSwatch()
+generateBoard();
+giveColorToSwatch();

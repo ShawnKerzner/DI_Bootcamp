@@ -12,7 +12,7 @@ html {
 body {
     display: flex;
     overflow: hidden;
-    background-color: lightgray;
+    background-color: lightslategray;
 }
 
 button {
@@ -31,7 +31,7 @@ button {
 }
 
 #coloring-board {
-    background-color: lightgray;
+    background-color: whitesmoke;
     height: 100vh;
     flex-basis: 80%;
     padding: 8px;
@@ -48,8 +48,7 @@ button {
 }
 
 .indv-cells {
-    border: 1px solid black;
+    border: 1px solid lightgrey;
     width: 30px;
     height: 30px;
-    background-color: whitesmoke;
 }
