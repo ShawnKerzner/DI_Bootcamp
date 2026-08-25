@@ -56,7 +56,7 @@ function handleMouseOver(event) {
 colorPallete.addEventListener("click", selectColor);
 coloringBoard.addEventListener("mousedown", handleMouseDown);
 coloringBoard.addEventListener("mouseover", handleMouseOver);
-
+coloringBoard.addEventListener("mouseup", handleMouseUp)
 
 generateBoard();
 giveColorToSwatch();
