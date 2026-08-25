@@ -1,8 +1,10 @@
 const coloringBoard = document.querySelector("#coloring-board");
 const swatches = document.querySelectorAll(".color-swatch");
 const colorPallete = document.querySelector("#color-pallete");
+const clearButton = document.querySelector("#clear-btn");
 let selectedColor = "whitesmoke";
-let mouseDown = false
+let mouseDown = false;
+
 
 function generateBoard() {
     let coloringBoardWidth = coloringBoard.offsetWidth;
@@ -37,6 +39,12 @@ function paintSquare(element) {
     element.style.backgroundColor = selectedColor;
 }
 
+function clearColoringBoard() {
+    for (let indvCell of individualCells) {
+        indvCell.style.backgroundColor = "whitesmoke"
+    }
+}
+
 function handleMouseDown(event) {
     event.preventDefault();
     mouseDown = true;
@@ -48,15 +56,21 @@ function handleMouseDown(event) {
 function handleMouseOver(event) {
     if (mouseDown) {
         if (event.target.classList.contains("indv-cells")) {
-            paintSquare(event.target)
+            paintSquare(event.target);
         }
     }
+}
+
+function handleMouseUp(event) {
+    mouseDown = false;
 }
 
 colorPallete.addEventListener("click", selectColor);
 coloringBoard.addEventListener("mousedown", handleMouseDown);
 coloringBoard.addEventListener("mouseover", handleMouseOver);
-coloringBoard.addEventListener("mouseup", handleMouseUp)
+coloringBoard.addEventListener("mouseup", handleMouseUp);
+clearButton.addEventListener("click", clearColoringBoard);
 
 generateBoard();
 giveColorToSwatch();
+const individualCells = document.querySelectorAll(".indv-cells");
