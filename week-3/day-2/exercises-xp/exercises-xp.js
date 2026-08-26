@@ -61,23 +61,22 @@
 // console.log(changeEnough(0.75, [0, 0, 20, 5]))  // we need true
 
 // Exercise 4
-// function hotelCost() {
-//     while (a = 1) {
-//         const numOfNights = prompt("How many nights would you like to stay?");
-//         if (isNaN(numOfNights)) {
-//             continue
-//         } else {
-//             if (numOfNights == "") {
-//                 numOfNights = 0;
-//             }
-//             totalHotelCost = (numOfNights * 140);
-//             console.log(totalHotelCost);
-//             return totalHotelCost
-//         }
-//     }
-// }
+function hotelCost() {
+    while (a = 1) {
+        const numOfNights = prompt("How many nights would you like to stay?");
+        if (isNaN(numOfNights)) {
+            continue
+        } else {
+            if (numOfNights == "") {
+                numOfNights = 0;
+            }
+            totalHotelCost = (numOfNights * 140);
+            return totalHotelCost
+        }
+    }
+}
 
-// hotelCost()
+
 
 function planeRideCost() {
     ticketPrice = 0
@@ -89,11 +88,41 @@ function planeRideCost() {
             continue
         } else if (destination == "london") {
             ticketPrice += 183;
-            console.log(ticketPrice);
+            return ticketPrice
+        } else if (destination == "paris") {
+            ticketPrice += 220;
+            return ticketPrice
+        } else {
+            ticketPrice += 300;
             return ticketPrice
         }
     }
 }
 
+function rentalCarCost() {
+    let total_car_cost = 0;
 
-planeRideCost()
+    while (c = 3) {
+        const rentalTime = prompt("How many days would you like to rent a car for?");
+        if (rentalTime == "") {
+            continue
+        } else if (isNaN(rentalTime) == true) {
+            continue
+        } else {
+            total_car_cost += (rentalTime * 10);
+            if (rentalTime > 10) {
+                let discount = total_car_cost * .05;
+                return total_car_cost - discount;
+            } else {
+                return total_car_cost
+            }
+        }
+    }
+
+}
+
+function totalVacationCost() {
+    return planeRideCost() + hotelCost() + rentalCarCost()
+}
+
+console.log(totalVacationCost());
