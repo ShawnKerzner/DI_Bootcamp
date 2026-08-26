@@ -1,64 +1,64 @@
-// // Exercise 1
-// function displayNumberDivisible(divisor) {
-//     for (i = 0; i < 500; i++) {
-//         if (i % divisor == 0) {
-//             console.log(i)
-//         }
-//     }
-// }
+// Exercise 1
+function displayNumberDivisible(divisor) {
+    for (i = 0; i < 500; i++) {
+        if (i % divisor == 0) {
+            console.log(i)
+        }
+    }
+}
 
-// displayNumberDivisible(56)
+displayNumberDivisible(56)
 
-// // Exercise 2
-// const stock = {
-//     "banana": 6,
-//     "apple": 0,
-//     "pear": 12,
-//     "orange": 32,
-//     "blueberry": 1
-// };
+// Exercise 2
+const stock = {
+    "banana": 6,
+    "apple": 0,
+    "pear": 12,
+    "orange": 32,
+    "blueberry": 1
+};
 
-// const prices = {
-//     "banana": 4,
-//     "apple": 2,
-//     "pear": 1,
-//     "orange": 1.5,
-//     "blueberry": 10
-// };
+const prices = {
+    "banana": 4,
+    "apple": 2,
+    "pear": 1,
+    "orange": 1.5,
+    "blueberry": 10
+};
 
-// const shoppingList = ["banana", "orange", "apple"];
-// let totalPrice = 0
+const shoppingList = ["banana", "orange", "apple"];
+let totalPrice = 0
 
-// function myBill() {
-//     for (item of shoppingList) {
-//         if (item in stock) {
-//             if (stock[item] > 0) {
-//                 stock[item] = stock[item] - 1;
-//                 totalPrice += prices[item];
-//             }
-//         }
-//     }
-//     console.log(totalPrice);
-// };
+function myBill() {
+    for (item of shoppingList) {
+        if (item in stock) {
+            if (stock[item] > 0) {
+                stock[item] = stock[item] - 1;
+                totalPrice += prices[item];
+            }
+        }
+    }
+    console.log(totalPrice);
+};
 
-// myBill()
+myBill()
 
-// // Exercise 3
-// function changeEnough(itemPrice, amountOfChange) {
-//     let sumOfChange = 0.0;
-//     const coins = [.25, .10, .05, .01];
-//     for (let i = 0; i < 4; i++) {
-//         sumOfChange += (amountOfChange[i] * coins[i]);
-//     }
-//     if (sumOfChange > itemPrice) {
-//         return true
-//     } else {
-//         return false
-//     }
-// }
+// Exercise 3
+function changeEnough(itemPrice, amountOfChange) {
+    let sumOfChange = 0.0;
+    const coins = [.25, .10, .05, .01];
+    for (let i = 0; i < 4; i++) {
+        sumOfChange += (amountOfChange[i] * coins[i]);
+    }
+    if (sumOfChange > itemPrice) {
+        return true
+    } else {
+        return false
+    }
+}
 
-// console.log(changeEnough(14.11, [2, 100, 0, 0])) // we need false
-// console.log(changeEnough(0.75, [0, 0, 20, 5]))  // we need true
+console.log(changeEnough(14.11, [2, 100, 0, 0])) // we need false
+console.log(changeEnough(0.75, [0, 0, 20, 5]))  // we need true
 
 // Exercise 4
 function hotelCost() {
