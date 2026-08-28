@@ -38,14 +38,53 @@
 // }
 // console.log(usersArray)
 
-// Exercise 4
-class Person {
+// // Exercise 4
+// class Person {
+//     constructor(name) {
+//         this.name = name;
+//     }
+// }
+
+// const member = new Person('John');
+// console.log(typeof member);
+// // so this code will return the data type object because typeof only looks at what type the variable member
+// // is and because member is an instance of the person class it is an object with access to all of person class atrributes and methods
+
+// Exercise 5
+class Dog {
     constructor(name) {
         this.name = name;
     }
-}
+};
 
-const member = new Person('John');
-console.log(typeof member);
-// so this code will return the data type object because of type only looks at what type member
-// is and because member is an instance of the person class it is an object with access to all of person class atrributes and methods
+// 1
+class Labrador extends Dog {
+    constructor(name, size) {
+        this.size = size;
+    }
+};
+// Cant be this one because it doesnt use the super keyword to call the super class constructor
+// 2
+class Labrador extends Dog {
+    constructor(name, size) {
+        super(name);
+        this.size = size;
+    }
+    // It's this one because name is initialized in the constructr and has a defined value and also uses the super keyword to call the super class constructor
+};
+// 3
+class Labrador extends Dog {
+    constructor(size) {
+        super(name);
+        this.size = size;
+    }
+    // Can't be this one because name isnt initialized as a variable with a value here so its just undefined
+};
+// 4
+class Labrador extends Dog {
+    constructor(name, size) {
+        this.name = name;
+        this.size = size;
+    }
+};
+// Can't be this one becuase it doesn't use the super keyword to call the super class constructor
