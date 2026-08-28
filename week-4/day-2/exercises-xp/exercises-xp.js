@@ -14,7 +14,7 @@
 // console.log(`I am ${name} from ${city}, ${country}. Latitude(${lat}), Longitude(${lng})`);
 // // I am John Doe from Vancouver, Canada. Latitude(49.2827), Longitude(-123.1207)
 
-// //Exercise 2 
+// //Exercise 2
 
 // // Using the code above, destructure the parameter inside the function and return a string as the example seen below:
 // // //output : 'Your full name is Elie Schoppik'
@@ -30,10 +30,22 @@
 
 // displayStudentInfo({ first: 'Elie', last: 'Schoppik' });
 
-// Exercise 3
-const users = { user1: 18273, user2: 92833, user3: 90315 }
-const usersArray = Object.entries(users)
-for (let nestedArray of usersArray) {
-    nestedArray[1] *= 2;
+// // Exercise 3
+// const users = { user1: 18273, user2: 92833, user3: 90315 }
+// const usersArray = Object.entries(users)
+// for (let nestedArray of usersArray) {
+//     nestedArray[1] *= 2;
+// }
+// console.log(usersArray)
+
+// Exercise 4
+class Person {
+    constructor(name) {
+        this.name = name;
+    }
 }
-console.log(usersArray)
+
+const member = new Person('John');
+console.log(typeof member);
+// so this code will return the data type object because of type only looks at what type member
+// is and because member is an instance of the person class it is an object with access to all of person class atrributes and methods
