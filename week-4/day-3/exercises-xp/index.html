@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Here in the first form the browser takes the form fields and appends them to the url as a query string -->
+    <form id="form" action="index.html" method="get" name="form">
+        <div>
+            <label for="name">Name: </label>
+            <input id="name-line" type="text" name="name-line">
+        </div>
+        <div>
+            <label for="comments">comments</label>
+            <textarea name="comments" id="comments"></textarea>
+        </div>
+        <button id="button" type="submit">submit</button>
+    </form>
+    <!-- Here in form 2 the info was sent inside the body of the httprequest instead of the URL and can viewed by looking at the request in the network section in chrome dev inspector  -->
+    <form id="form2" action="index.html" method="post" name="form2">
+        <div>
+            <label for="name2">Name: </label>
+            <input id="name-line2" type="text" name="name-line2">
+        </div>
+        <div>
+            <label for="comments2">comments</label>
+            <textarea name="tcomments2" id="comments2"></textarea>
+
+        </div>
+        <button id="button2" type="submit">submit</button>
+    </form>
+
+
+</body>
+
+</html>
