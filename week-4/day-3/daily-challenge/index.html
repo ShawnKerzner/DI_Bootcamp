@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Form
+    </title>
+</head>
+
+<body>
+    <form action="index.html" method="get">
+        <div>
+            <label for="first-name">First Name: </label>
+            <input type="text" id="first-name" name="first-name" autocomplete="given-name">
+        </div>
+        <div>
+            <label for="last-name">Last Name: </label>
+            <input type="text" id="last-name" name="last-name" autocomplete="family-name">
+        </div>
+        <button type="submit">submit</button>
+    </form>
+    <script>
+        let form = document.querySelector("form")
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            let firstName = document.querySelector("#first-name");
+            let lastName = document.querySelector("#last-name");
+            const formObject = {
+                firstname: firstName.value,
+                lastname: lastName.value,
+            }
+            console.log(formObject)
+            let json = JSON.stringify(formObject)
+            let element = document.createElement("p")
+            element.innerText = json
+            document.body.appendChild(element);
+
+
+        })
+
+
+    </script>
+</body>
+
+</html>
