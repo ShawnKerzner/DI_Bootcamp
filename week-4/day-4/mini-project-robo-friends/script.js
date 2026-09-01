@@ -93,8 +93,6 @@ function renderCards(robotArray) {
     }
 }
 
-
-
 function searchByName(searhBarInput) {
     let allLowersearhBarInput = searhBarInput.toLowerCase()
     for (let robot of robots) {
@@ -106,6 +104,9 @@ function searchByName(searhBarInput) {
         }
     }
 }
+
+const searchBar = document.querySelector("#search-bar")
+searchBar.addEventListener("input", searchByName)
 
 
 renderCards(robots);
