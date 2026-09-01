@@ -78,7 +78,7 @@ let robotContainerDiv = document.querySelector("#robot-container");
 function renderCards(robotArray) {
     for (let robot of robotArray) {
         let robotCardDiv = document.createElement("div");
-        robotCardDiv.id = robot["id"];
+        robotCardDiv.id = "robot" + robot["id"];
         let robotImage = document.createElement("img");
         robotImage.src = robot["image"];
         robotImage.classList.add("robot-image")
@@ -92,12 +92,13 @@ function renderCards(robotArray) {
         robotContainerDiv.append(robotCardDiv);
     }
 }
+renderCards(robots);
 
-function searchByName(searhBarInput) {
-    let allLowersearhBarInput = searhBarInput.toLowerCase()
+function searchByName(searchBarInput) {
+    let allLowersearhBarInput = searchBarInput.target.value.toLowerCase()
     for (let robot of robots) {
-        let robotCardDiv = document.querySelector(`#${robot["id"]}`)
-        if (robot["name"].includes(allLowersearhBarInput) == false) {
+        let robotCardDiv = document.querySelector('#robot' + `${robot["id"]}`)
+        if (robot["name"].toLowerCase().includes(allLowersearhBarInput) == false) {
             robotCardDiv.style.display = "none"
         } else {
             robotCardDiv.style.display = "";
@@ -109,4 +110,4 @@ const searchBar = document.querySelector("#search-bar")
 searchBar.addEventListener("input", searchByName)
 
 
-renderCards(robots);
+
