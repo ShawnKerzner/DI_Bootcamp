@@ -60,3 +60,17 @@ async function formSubmission(e) {
 
 let form = document.querySelector("#currency-converter-input");
 form.addEventListener("submit", formSubmission)
+
+function swapCurrencies(e) {
+    e.preventDefault();
+    let currentCurrency = document.getElementById("current-currency");
+    let desiredCurrency = document.getElementById("desired-currency");
+    let currentCurrencyValue = currentCurrency.value;
+    let desiredCurrencyValue = desiredCurrency.value;
+    currentCurrency.value = desiredCurrencyValue;
+    desiredCurrency.value = currentCurrencyValue;
+    formSubmission(e);
+}
+
+const switchButton = document.querySelector("#switch");
+switchButton.addEventListener("click", swapCurrencies)
