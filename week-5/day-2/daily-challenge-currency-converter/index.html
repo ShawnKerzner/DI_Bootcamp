@@ -7,18 +7,34 @@
     <title>Currency Converter</title>
 </head>
 <body>
-    <header><h1>Currency Converter</h1></header>
-    <main>
-        <form action="" id="currency-converter-input">
-            <select name="currnet-currency" id="current-currency" type="dropdown" class="dropdowns"></select>
-            <select name="desired-currency" id="desired-currency" type="dropdown" class="dropdowns"></select>
-            <button id="switch" name="switch" type="button">Switch</button>
-            <input type="number" id="amount" name="amount">
-            <button id="submit-button" name="submit-button">Submit</button>
+    <div class="board-page">
+        <div class="board-track board-track-top" aria-hidden="true"></div>
+        <div class="board-track board-track-bottom" aria-hidden="true"></div>
+        <div class="board-track board-track-left" aria-hidden="true"></div>
+        <div class="board-track board-track-right" aria-hidden="true"></div>
+        <div class="board-corner board-corner-tl" aria-hidden="true">FREE<br>PARKING</div>
+        <div class="board-corner board-corner-tr" aria-hidden="true">GO TO<br>JAIL</div>
+        <div class="board-corner board-corner-bl" aria-hidden="true">IN<br>JAIL</div>
+        <div class="board-corner board-corner-br" aria-hidden="true">GO</div>
 
-        </form>
-        <div id="result-div"></div>
-    </main>
+        <div class="board-center">
+            <header><h1>Currency Converter</h1></header>
+            <main>
+                <form action="" id="currency-converter-input">
+                    <label for="current-currency">From</label>
+                    <select name="currnet-currency" id="current-currency" type="dropdown" class="dropdowns"></select>
+                    <label for="desired-currency">To</label>
+                    <select name="desired-currency" id="desired-currency" type="dropdown" class="dropdowns"></select>
+                    <button id="switch" name="switch" type="button">Switch</button>
+                    <label for="amount">Amount</label>
+                    <input type="number" id="amount" name="amount">
+                    <button id="submit-button" name="submit-button">Submit</button>
+
+                </form>
+                <div id="result-div"></div>
+            </main>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
