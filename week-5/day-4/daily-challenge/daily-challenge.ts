@@ -6,17 +6,16 @@ interface Book {
     genre?: string
 }
 
-interface DigitalBook extends Book {
-    downloadable: string;
-}
+// interface DigitalBook extends Book {
+//     downloadable: string;
+// }
 
 class Library {
 
     private books: Book[] = [];
 
-    constructor(books: Book []) {
-        this.books = [];
-
+    constructor(books: Book[]) {
+        this.books = books;
     }
 
     getBookAuthor(isbn: string): string {
@@ -28,8 +27,13 @@ class Library {
         return this.books.map(book => book.title);
     }
 
-    getBookdetails(isbn: string): Book {
-        return this.books
+    getBookdetails(isbn: string): string{
+        const book = this.books.find(book => book.isbn === isbn);
+        let result = "Book does not exist";
+        if (book) {
+            result = `Book Title: ${book.title}\nAuthor: ${book.author}\nPublished: ${book.publishedYear}\nISBN: ${book.isbn}\n${book.genre ? "Genre: " + book.genre : "" }`;
+        }
+        return result
     }
 
 }
@@ -60,4 +64,4 @@ const genericBooks = [
 
 
 const myLibrary = new Library(genericBooks);
-console.log()
+console.log(myLibrary.getBookdetails("9780451524935"))
