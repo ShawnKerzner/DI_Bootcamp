@@ -14,8 +14,8 @@ class Library {
 
     private books: Book[] = [];
 
-    constructor(books: Book[]) {
-        this.books = books;
+    constructor() {
+        this.books = []
     }
 
     getBookAuthor(isbn: string): string {
@@ -27,7 +27,7 @@ class Library {
         return this.books.map(book => book.title);
     }
 
-    getBookdetails(isbn: string): string{
+    getBookDetails(isbn: string): string{
         const book = this.books.find(book => book.isbn === isbn);
         let result = "Book does not exist";
         if (book) {
@@ -36,14 +36,23 @@ class Library {
         return result
     }
 
+    addBook(newBook: Book): void {
+        this.books.push(newBook);
+    }
 }
 
 class DigitalLibrary extends Library {
-
-
-    constructor(books: Book []) {
-        super(books);
+    readonly website: string;
+    constructor(website: string) {
+        super();
+        this.website = website;
     }
+
+    listBooks(){
+        let result = this.getBookTitles();
+        return result;
+    }
+
 }
 
 const genericBooks = [
@@ -63,5 +72,10 @@ const genericBooks = [
 
 
 
-const myLibrary = new Library(genericBooks);
-console.log(myLibrary.getBookdetails("9780451524935"))
+let ourLibrary = new DigitalLibrary("amazon");
+
+for(let book of genericBooks) {
+    ourLibrary.addBook(book);
+}
+
+console.log(ourLibrary.getBookDetails("9780061120084"));
