@@ -23,35 +23,35 @@
 
 // console.log(sumNumbersInArray([1,"hi", 4, "bye", 5]));
 
-// Exercise 3
+// // Exercise 3
 
-type AdvancedUser = {
-    name: string;
-    age: number;
-    address?: string;
-}
+// type AdvancedUser = {
+//     name: string;
+//     age: number;
+//     address?: string;
+// }
 
-function introduceAdvancedUser(obj: AdvancedUser) {
-    if (obj["address"] !== undefined) {
-        return `Hello! My name is ${obj["name"]}. I am ${obj["age"]} years old. My address is ${obj.address}.`;
-    } else {
-        return `Hello! My name is ${obj["name"]}. I am ${obj["age"]} years old.`;
-    }
-}
+// function introduceAdvancedUser(obj: AdvancedUser) {
+//     if (obj["address"] !== undefined) {
+//         return `Hello! My name is ${obj["name"]}. I am ${obj["age"]} years old. My address is ${obj.address}.`;
+//     } else {
+//         return `Hello! My name is ${obj["name"]}. I am ${obj["age"]} years old.`;
+//     }
+// }
 
-const userWithAddress: AdvancedUser = {
-  name: "Alice",
-  age: 30,
-  address: "123 Main St"
-};
+// const userWithAddress: AdvancedUser = {
+//   name: "Alice",
+//   age: 30,
+//   address: "123 Main St"
+// };
 
-const userWithoutAddress: AdvancedUser = {
-  name: "Bob",
-  age: 25
-};
+// const userWithoutAddress: AdvancedUser = {
+//   name: "Bob",
+//   age: 25
+// };
 
-console.log(introduceAdvancedUser(userWithAddress));
-console.log(introduceAdvancedUser(userWithoutAddress));
+// console.log(introduceAdvancedUser(userWithAddress));
+// console.log(introduceAdvancedUser(userWithoutAddress));
 
 
 // // Exercise 4
