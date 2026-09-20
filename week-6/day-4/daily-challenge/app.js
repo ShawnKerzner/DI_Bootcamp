@@ -39,8 +39,8 @@ app.post('/guess', (req, res) => {
     const guess = req.body.guess;
     if (guess === currentAnswer.name){
         currentPlayer.score += 1;
-        res.status(200).json()
+        res.status(200).json({correct: true, score: currentPlayer.score});
     } else {
-
+        res.status(200).json({correct: false, answer: currentAnswer.name})
     }
 })
