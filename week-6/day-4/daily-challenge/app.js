@@ -2,9 +2,8 @@ const express = require('express');
 const app = express();
 
 let currentAnswer = null;
-let currentPlayer = {
-    score:0
-};
+let currentPlayer = null;
+let players = [];
 
 const emojis = [
     { emoji: '😀', name: 'Smile' },
@@ -13,10 +12,7 @@ const emojis = [
 ];
 
 app.use(express.json());
-
-app.listen(5000, () => {
-    console.log("server is listening on port 5000...")
-});
+app.use(express.static(__dirname));
 
 app.get('/round', (req, res) => {
     const randomNumber = Math.floor((Math.random() * emojis.length));
@@ -44,3 +40,24 @@ app.post('/guess', (req, res) => {
         res.status(200).json({correct: false, answer: currentAnswer.name})
     }
 })
+
+app.post ('/newPlayerEntry', (req, res) => {
+    const playerName = req.body.name;
+    const newPlayer = {name: playerName, score: 0};
+    currentPlayer = newPlayer;
+    players.push(currentPlayer);
+    res.status(200).json({message: "New player confirmed"});
+})
+
+app.get('/leaderboard',  (req, res) => {
+    const topThree = players.sort((a, b) => {
+        return b.score - a.score
+    }).slice(0,3);
+    res.status(200).json(topThree);
+})
+
+app.listen(5000, () => {
+    console.log("server is listening on port 5000...")
+});
+
+
