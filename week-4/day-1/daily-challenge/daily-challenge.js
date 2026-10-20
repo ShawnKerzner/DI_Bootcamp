@@ -25,9 +25,11 @@ const gameInfo = [
  },
 ];
 
-const usernames = gameInfo.forEach((user) => console.log(`${user.username}!`))
+const usernames = []
+gameInfo.forEach((user) => usernames.push(`${user.username}!`))
 
-const winners = gameInfo.forEach((user) => (user.score > 5 ? console.log(user.username) : false));
+const winners = []
+gameInfo.forEach((user) => (user.score > 5 ? winners.push(user.username) : false));
 
 const totalScore = gameInfo.reduce((sum, user) => sum + user.score, 0);
 console.log(totalScore);
